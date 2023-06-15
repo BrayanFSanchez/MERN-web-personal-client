@@ -1,10 +1,11 @@
 import { Routes, Route } from "react-router-dom";
 import { AdminLayout } from "../layouts";
 import { Auth, Users, Blog, Courses, Menu, Newsletter } from "../pages/admin";
-
-const user = null;
+import { useAuth } from "../hooks";
 
 export const AdminRouter = () => {
+  const { user } = useAuth();
+
   const loadLayout = (Layout, Page) => {
     return (
       <Layout>
