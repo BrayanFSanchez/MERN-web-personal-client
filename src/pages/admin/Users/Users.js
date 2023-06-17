@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Tab, Button } from "semantic-ui-react";
 import { BasicModal } from "../../../components/Admin/Shared";
+import { UserForm, ListUsers } from "../../../components/Admin/Users";
 import "./User.scss";
 
 export const Users = () => {
@@ -12,7 +13,7 @@ export const Users = () => {
       menuItem: "Usuarios activos",
       render: () => (
         <Tab.Pane attached={false}>
-          <h2>Usuarios activos</h2>
+          <ListUsers usersActive={true} />
         </Tab.Pane>
       ),
     },
@@ -20,7 +21,7 @@ export const Users = () => {
       menuItem: "Usuarios inactivos",
       render: () => (
         <Tab.Pane attached={false}>
-          <h2>Usuarios inactivos</h2>
+          <ListUsers usersActive={false} />
         </Tab.Pane>
       ),
     },
@@ -40,7 +41,7 @@ export const Users = () => {
         close={onOpenCloseModal}
         title="Crear nuevo usuario"
       >
-        <h2>formulario para crear usuarios</h2>
+        <UserForm close={onOpenCloseModal} />
       </BasicModal>
     </>
   );
