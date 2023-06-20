@@ -9,6 +9,7 @@ import { initialValues, validationSchema } from "./UserForm.form";
 import "./UserForm.scss";
 
 const userController = new User();
+const BASE_PATH = process.env.REACT_APP_BASE_PATH;
 
 const roleOptions = [
   {
@@ -28,12 +29,19 @@ export const UserForm = (props) => {
   const { accessToken } = useAuth();
 
   const formik = useFormik({
-    initialValues: initialValues(),
-    validationSchema: validationSchema(),
+    initialValues: initialValues(user),
+    validationSchema: validationSchema(user),
     validateOnChange: false,
     onSubmit: async (formValue) => {
       try {
-        await userController.createUser(accessToken, formValue);
+        if (!user) {
+          await userController.createUser(accessToken, formValue);
+        } else {
+          console.log("Update");
+          console.log(formValue);
+        }
+
+        onReload();
         close();
       } catch (error) {
         console.error(error);
@@ -55,6 +63,8 @@ export const UserForm = (props) => {
   const getAvatar = () => {
     if (formik.values.fileAvatar) {
       return formik.values.avatar;
+    } else if (formik.values.avatar) {
+      return `${BASE_PATH}/${formik.values.avatar}`;
     }
 
     return image.noAvatar;
