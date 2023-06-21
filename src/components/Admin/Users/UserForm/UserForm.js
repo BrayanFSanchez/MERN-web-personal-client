@@ -37,8 +37,7 @@ export const UserForm = (props) => {
         if (!user) {
           await userController.createUser(accessToken, formValue);
         } else {
-          console.log("Update");
-          console.log(formValue);
+          await userController.updateUser(accessToken, user._id, formValue);
         }
 
         onReload();
