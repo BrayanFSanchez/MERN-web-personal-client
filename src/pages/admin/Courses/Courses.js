@@ -15,7 +15,7 @@ export const Courses = () => {
     {
       render: () => (
         <Tab.Pane attached={false}>
-          <ListCourses reload={reload} />
+          <ListCourses reload={reload} onReload={onReload} />
         </Tab.Pane>
       ),
     },

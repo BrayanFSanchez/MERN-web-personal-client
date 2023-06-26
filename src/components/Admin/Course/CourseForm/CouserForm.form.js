@@ -1,14 +1,14 @@
 import * as Yup from "yup";
 
-export const initialValues = () => {
+export const initialValues = (course) => {
   return {
-    title: "",
-    miniature: "",
+    title: course?.title || "",
+    miniature: course?.miniature || "",
     file: null,
-    description: "",
-    url: "",
-    price: null,
-    score: null,
+    description: course?.description || "",
+    url: course?.url || "",
+    price: course?.price || null,
+    score: course?.score || null,
   };
 };
 

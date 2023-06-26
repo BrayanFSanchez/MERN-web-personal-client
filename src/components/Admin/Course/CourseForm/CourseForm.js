@@ -7,19 +7,29 @@ import { useAuth } from "../../../../hooks";
 import { initialValues, validationSchema } from "./CouserForm.form";
 import "./CourseForm.scss";
 
+const BASE_PATH = process.env.REACT_APP_BASE_PATH;
+
 const courseController = new Course();
 
 export const CourseForm = (props) => {
-  const { onClose, onReload } = props;
+  const { onClose, onReload, course } = props;
   const { accessToken } = useAuth();
 
   const formik = useFormik({
-    initialValues: initialValues(),
+    initialValues: initialValues(course),
     validationSchema: validationSchema(),
     validateOnChange: false,
     onSubmit: async (formValue) => {
       try {
-        await courseController.createCourse(accessToken, formValue);
+        if (!course) {
+          await courseController.createCourse(accessToken, formValue);
+        } else {
+          await courseController.updateCourse(
+            accessToken,
+            course._id,
+            formValue
+          );
+        }
 
         onReload();
         onClose();
@@ -43,6 +53,8 @@ export const CourseForm = (props) => {
   const getMiniature = () => {
     if (formik.values.file) {
       return formik.values.miniature;
+    } else if (formik.values.miniature) {
+      return `${BASE_PATH}/${formik.values.miniature}`;
     }
     return null;
   };
@@ -102,7 +114,7 @@ export const CourseForm = (props) => {
       </Form.Group>
 
       <Form.Button type="submit" primary fluid loading={formik.isSubmitting}>
-        Crear curso
+        {!course ? "Crear curso" : "Actualizar curso"}
       </Form.Button>
     </Form>
   );
