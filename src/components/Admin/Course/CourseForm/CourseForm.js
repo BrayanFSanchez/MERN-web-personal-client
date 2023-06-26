@@ -2,17 +2,27 @@ import React, { useCallback } from "react";
 import { Form, Image } from "semantic-ui-react";
 import { useDropzone } from "react-dropzone";
 import { useFormik } from "formik";
+import { Course } from "../../../../api";
+import { useAuth } from "../../../../hooks";
 import { initialValues, validationSchema } from "./CouserForm.form";
 import "./CourseForm.scss";
 
-export const CourseForm = () => {
+const courseController = new Course();
+
+export const CourseForm = (props) => {
+  const { onClose, onReload } = props;
+  const { accessToken } = useAuth();
+
   const formik = useFormik({
     initialValues: initialValues(),
     validationSchema: validationSchema(),
     validateOnChange: false,
     onSubmit: async (formValue) => {
       try {
-        console.log(formValue);
+        await courseController.createCourse(accessToken, formValue);
+
+        onReload();
+        onClose();
       } catch (error) {
         console.error(error);
       }

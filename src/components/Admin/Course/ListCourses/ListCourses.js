@@ -7,7 +7,9 @@ import "./ListCourses.scss";
 
 const courseController = new Course();
 
-export const ListCourses = () => {
+export const ListCourses = (props) => {
+  const { reload } = props;
+
   const [courses, setCourses] = useState(false);
   const [page, setPage] = useState(1);
   const [pagination, setPagination] = useState();
@@ -27,7 +29,7 @@ export const ListCourses = () => {
         console.error(error);
       }
     })();
-  }, [page]);
+  }, [page, reload]);
 
   const changePage = (_, data) => {
     setPage(data.activePage);
