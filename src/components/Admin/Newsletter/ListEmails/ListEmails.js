@@ -36,7 +36,7 @@ export const ListEmails = () => {
         console.error(error);
       }
     })();
-  }, [page, reload]);
+  }, [accessToken, page, reload]);
 
   const changePage = (_, data) => {
     setPage(data.activePage);
