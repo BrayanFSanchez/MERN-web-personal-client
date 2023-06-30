@@ -59,7 +59,7 @@ export const MenuForm = (props) => {
           type="number"
           placeholder="order"
           onChange={formik.handleChange}
-          value={formik.values.order}
+          value={formik.values.order === null ? "" : formik.values.order}
           error={formik.errors.order}
         />
       </Form.Group>

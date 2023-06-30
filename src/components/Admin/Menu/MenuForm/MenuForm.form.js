@@ -6,7 +6,7 @@ export const initialValues = (menu) => {
     path: menu?.path || "",
     protocol: menu?.protocol || "https://",
     active: menu?.active || true,
-    order: menu?.order || undefined,
+    order: menu?.order || null,
   };
 };
 
