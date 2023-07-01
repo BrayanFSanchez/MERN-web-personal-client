@@ -8,10 +8,34 @@ export const Menu = () => {
     <div className="footer-menu">
       <h4>Navegación</h4>
 
-      <Grid>
+      <Grid columns={2}>
         <Grid.Column>
           <Link to="#">
             <Icon name="book" /> Cursos online
+          </Link>
+          <Link to="#">
+            <Icon name="code" /> Desarrollo web
+          </Link>
+          <Link to="#">
+            <Icon name="database" /> Bases de datos
+          </Link>
+          <Link to="#">
+            <Icon name="code" /> UI/UX
+          </Link>
+        </Grid.Column>
+
+        <Grid.Column>
+          <Link to="#">
+            <Icon name="server" /> Sistemas / Servidores
+          </Link>
+          <Link to="#">
+            <Icon name="cogs" /> CMS
+          </Link>
+          <Link to="#">
+            <Icon name="user outline" /> Porfolio
+          </Link>
+          <Link to="#">
+            <Icon name="python" /> Backend
           </Link>
         </Grid.Column>
       </Grid>

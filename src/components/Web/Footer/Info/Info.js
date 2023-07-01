@@ -10,8 +10,8 @@ export const Info = () => {
     <div className="footer-info">
       <Icon.LogoWhite className="logo" />
       <p>
-        Entrá en el mundo del desarrollo web, disfruta creando proyectos de todo
-        tipo, deja que tú imaginación fluya y crea verdaderas maravillas.
+        Entra en el mundo del desarrollo web, disfruta creando proyectos de todo
+        tipo, deja que tú imaginación fluya y crea verdaderas maravillas!!
       </p>
 
       {map(socialData, (social) => (
