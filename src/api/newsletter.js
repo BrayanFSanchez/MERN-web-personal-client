@@ -50,4 +50,25 @@ export class Newsletter {
       throw error;
     }
   }
+  async registerEmail(email) {
+    try {
+      const url = `${this.baseApi}/${newsletterRoute}`;
+      const params = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      };
+
+      const response = await fetch(url, params);
+      const result = await response.json();
+
+      if (response.status !== 200) throw result;
+
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  }
 }

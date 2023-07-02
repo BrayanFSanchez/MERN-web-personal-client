@@ -1,9 +1,11 @@
 import React from "react";
+import { Banner, HomeCourses } from "../../../components";
 
 export const Home = () => {
   return (
     <div>
-      <h1>Estamos en la Home de la web</h1>
+      <Banner />
+      <HomeCourses />
     </div>
   );
 };
