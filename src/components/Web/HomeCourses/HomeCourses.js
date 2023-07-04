@@ -24,7 +24,7 @@ export const HomeCourses = () => {
 
   return (
     <Container className="home-courses">
-      <h2>Aprendé y mejora tus hablidades</h2>
+      <h2>Mejorá tus hablidades</h2>
 
       <div className="home-courses__all-courses">
         {map(courses, (course) => (
@@ -39,7 +39,7 @@ export const HomeCourses = () => {
       </div>
 
       <div className="home-courses__more">
-        <Button as={Link} to="/courses" primary>
+        <Button as={Link} to="/cursos" primary>
           Ver más
         </Button>
       </div>

@@ -1,15 +1,15 @@
 export const socialData = [
   {
     type: "youtube",
-    link: "https://www.youtube.com/c/AgustinNavarroGaldon?sub_confirmation=1",
+    link: "#",
   },
   {
     type: "twitter",
-    link: "https://twitter.com/xAgustin93",
+    link: "#",
   },
   {
     type: "facebook",
-    link: "https://www.facebook.com/AgustinNavarroGaldon",
+    link: "#",
   },
   {
     type: "linkedin",

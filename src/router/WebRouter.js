@@ -1,6 +1,7 @@
+import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { ClientLayout } from "../layouts";
-import { Home, Contact, Courses, Blog, Post } from "../pages/web";
+import { Home, Courses, Blog, Post } from "../pages/web";
 
 export const WebRouter = () => {
   const loadLayout = (Layout, Page) => {
@@ -10,11 +11,11 @@ export const WebRouter = () => {
       </Layout>
     );
   };
+
   return (
     <Routes>
       <Route path="/" element={loadLayout(ClientLayout, Home)} />
-      <Route path="/courses" element={loadLayout(ClientLayout, Courses)} />
-      <Route path="/contact" element={loadLayout(ClientLayout, Contact)} />
+      <Route path="/cursos" element={loadLayout(ClientLayout, Courses)} />
       <Route path="/blog" element={loadLayout(ClientLayout, Blog)} />
       <Route path="/blog/:path" element={loadLayout(ClientLayout, Post)} />
     </Routes>
