@@ -4,6 +4,9 @@ Welcome to the client of my MERN project called web-personal-client.
 # Description
 This project is a personal website developed using the MERN stack, which combines MongoDB, Express.js, React.js and Node.js technologies. The main goal of this application is to provide a platform for displaying personal information and sharing relevant resources.
 
+## Home Page
+![home-page](https://github.com/BrayanFSanchez/MERN-web-personal-client/assets/49698030/313ab973-e77c-4cb4-a4df-a5e0f334248e)
+
 # Installation
 1. Clone the repository: https://github.com/BrayanFSanchez/MERN-web-personal-client.git
 2. Navigate to the directory.
@@ -25,6 +28,8 @@ npm run build: Use this command when you are ready to compile and build the prod
 # Main functionalities
 1. User Authentication: The application allows users to securely authenticate themselves. This involves the implementation of a registration and login system, where users can create an account and access their personalized profile.
 
+![login](https://github.com/BrayanFSanchez/MERN-web-personal-client/assets/49698030/80b26e4f-61d5-478c-be58-d2c5e90f00f4)
+
 2. Administration Dashboard: The project has a dashboard to manage various sections, including:
 
 Users: Allows the management of registered user information, such as editing profiles, roles and permissions.
@@ -36,6 +41,8 @@ Courses: Allows adding, editing and deleting scheduling courses available to use
 Newsletters: Provides the option to create and send newsletters to subscribed users.
 
 Blogs: Allows managing and publishing blogs related to courses and programming topics.
+
+![dashboard](https://github.com/BrayanFSanchez/MERN-web-personal-client/assets/49698030/5dc0471c-bfcf-4440-90f0-f184c3da65bf)
 
 3. Attractive Home Page: The application has a well-designed and attractive home page. This page is used to invite visitors to learn more about you and the programming courses you offer. It can include relevant information about your experience, featured skills, testimonials from previous students and links to more details about the courses.
 
